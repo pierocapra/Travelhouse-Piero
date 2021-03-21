@@ -14,6 +14,7 @@
     left: 0;
     width: 100%;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     border-radius: 3px;
     overflow: hidden;
     box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
@@ -53,10 +54,12 @@
 
   &:hover &__side--front {
     transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
   }
 
   &:hover &__side--back {
     transform: rotateY(360deg);
+    -webkit-transform: rotateY(360deg);
   }
 
   //FRONT-SIDE STYLE

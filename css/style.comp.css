@@ -39,6 +39,10 @@ body {
     body {
       padding: 0; } }
 
+::selection {
+  background-color: #6fb6d5;
+  color: #fff; }
+
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -122,19 +126,12 @@ body {
   text-transform: uppercase;
   font-weight: 700;
   display: inline-block;
-  background: linear-gradient(to right, #6fb6d5, #288fb4);
-  color: #55a3c5;
   letter-spacing: 2px;
-  transition: all 0.2s; }
-  @supports (-webkit-text-fill-color: transparent) {
-    .heading-secondary {
-      background: linear-gradient(to right, #6fb6d5, #288fb4);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      -webkit-text-fill-color: transparent;
-      letter-spacing: 2px;
-      transition: all 0.2s; } }
+  transition: all 0.2s;
+  background: linear-gradient(to right, #288fb4, #6fb6d5);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #55a3c5; }
   @media only screen and (max-width: 56.25em) {
     .heading-secondary {
       font-size: 3rem; } }
@@ -143,7 +140,8 @@ body {
       font-size: 2.5rem; } }
   .heading-secondary:hover {
     transform: skewx(2deg) skewY(-2deg) scale(1.05);
-    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.3); }
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.3);
+    -webkit-text-fill-color: transparent; }
 
 .heading-tertiary {
   font-size: 1.6rem;
@@ -416,6 +414,7 @@ body {
     left: 0;
     width: 100%;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     border-radius: 3px;
     overflow: hidden;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2); }
@@ -430,9 +429,11 @@ body {
       .card__side--back-3 {
         background-image: linear-gradient(to right bottom, #2659ff, #0414c6); }
   .card:hover .card__side--front {
-    transform: rotateY(180deg); }
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg); }
   .card:hover .card__side--back {
-    transform: rotateY(360deg); }
+    transform: rotateY(360deg);
+    -webkit-transform: rotateY(360deg); }
   .card__picture {
     background-size: cover;
     height: 23rem;
